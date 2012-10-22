@@ -31,13 +31,13 @@ func (t *Tabtet) SetGlobalContext(ctx map[string]interface{}) {
 	t.globalContext = ctx
 }
 
-func (t *Tablet) GlobalContext() {
+func (t *Tablet) GlobalContext() map[string]interface{} {
 	t.mu.Lock()
 	defer t.mu.Unlock()
 	return t.globalContext
 }
 
-func GlobalContext() string {
+func GlobalContext() map[string]interface{} {
 	return std.GlobalContext()
 }
 
